@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Médica</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #daf0e6;
+            overflow-x: hidden;
+        }
+
+        /* Corrigindo o seletor para o efeito de hover nos links */
+        header a:hover, footer a:hover {
+            text-decoration: underline;
+            color: red; /* Mudança de cor ao passar o mouse */
+            transition: all 0.3s ease; /* Adicionando uma transição suave */
+        }
+
+        header {
+            padding: 20px;
+            background-image: url(5926158.jpg);
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            transition: height 0.5s; /* Adiciona uma transição suave à altura do cabeçalho */
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        nav li {
+            padding: 15px 15px; /* Ajuste de padding para mover o texto para baixo */
+            cursor: pointer;
+            color: black;
+            font-size: medium;
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            transition: all 0.3s ease; /* Adicionando uma transição suave */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: -100%; /* Esconde o menu por padrão */
+            height: 100vh;
+            width: 200px;
+            background-color: rgb(201, 255, 232);
+            color: #C9FFE8;
+            overflow-y: auto;
+            transition: left 0.3s ease-in-out; /* Adiciona uma transição suave ao mostrar/ocultar o menu */
+        }
+
+        .content {
+            padding: 20px; /* Adiciona um espaçamento interno */
+            color: black; /* Cor do texto dentro da div .content */
+            text-align: justify; /* Justifica o texto horizontalmente */
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(128, 255, 0, 0.171);
+            padding: 20px;
+            color: black;
+            text-align: center;
+            transition: all 0.3s ease; /* Adicionando uma transição suave */
+        }
+
+        /* Ajustando o espaçamento entre os itens do menu */
+        nav li {
+            padding: 15px 15px 15px 20px; /* Adicionando mais espaço à direita */
+        }
+
+        /* Mostra o cabeçalho e o conteúdo quando o mouse estiver sobre a página */
+        body:hover header,
+        body:hover .content {
+            height: 320px; /* Mostra o cabeçalho com a altura original */
+        }
+
+        /* Exibe o menu quando a classe "open" é adicionada */
+        nav.open {
+            left: 0;
+        }
+
+        /* Botão de alternância do menu para dispositivos móveis */
+        .menu-toggle {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 1000; /* Define a ordem de empilhamento */
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                height: 200px; /* Reduz a altura do cabeçalho em dispositivos móveis */
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            /* Ajuste de estilos para acomodar dispositivos móveis */
+            nav li {
+                padding: 15px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Clínica Médica</h1>
+    </header>
+    <!-- Botão de alternância do menu para dispositivos móveis -->
+    <div class="menu-toggle">&#9776;</div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Página Principal</a></li>
+            <li><a href="sobreaclinica.html">Sobre a clínica</a></li>
+            <li><a href="atendimento.html">Horário de Atendimento</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Bem-vindo à Clínica Médica</h2>
+        <p>Nossa clínica oferece serviços médicos de alta qualidade, com uma equipe dedicada de profissionais de saúde prontos para cuidar de você e de sua família. Aqui, você encontrará atendimento personalizado e tratamentos modernos em um ambiente acolhedor e seguro.</p>
+        <p>Explore nosso site para saber mais sobre nossos serviços, horários de atendimento e como entrar em contato conosco. Estamos aqui para ajudá-lo a cuidar da sua saúde e bem-estar.</p>
+    </div>
+    <footer>
+        &copy; 2024 Clínica Médica - Todos os direitos reservados
+    </footer>
+    <script>
+        // JavaScript para controlar o menu de alternância em dispositivos móveis
+        const menuToggle = document.querySelector('.menu-toggle');
+        const nav = document.querySelector('nav');
+
+        menuToggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>
